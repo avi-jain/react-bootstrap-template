@@ -6,19 +6,19 @@ var NavBar = React.createClass({
   
     render : function(){
         var createNavItem = function(item,index){
-            return(<NavItem key={item.title + index} title={item.title} href={item.href} />);
+            return(<NavItem lstyle={linkStyle} key={item.title + index} title={item.title} href={item.href} />);
         };
         var navStyle ={
             
         }
-        var titleStyle ={
+        var linkStyle ={
             
         }
         if(this.props.bgColor){
             navStyle.background = this.props.bgColor;
         }
         if(this.props.linkColor){
-            linkStyle.background = this.props.linkColor;
+            linkStyle.color = this.props.linkColor;
         }
         return(
            <div>

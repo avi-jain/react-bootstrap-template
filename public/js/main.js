@@ -20309,22 +20309,32 @@ process.umask = function() { return 0; };
 var React = require('react');
 
 var NavItem = React.createClass({
-   displayName: 'NavItem',
+    displayName: 'NavItem',
 
-   render: function () {
-      return React.createElement(
-         'li',
-         null,
-         ' ',
-         React.createElement(
-            'a',
-            { href: this.props.href },
-            this.props.title,
-            ' '
-         )
-      ) /*DON'T Make a separate div here. Hinders with BS logic*/
-      ;
-   }
+    getInitialState: function () {
+        return { hover: false };
+    },
+    mouseOver: function () {
+        this.setState({ hover: true });
+    },
+    mouseOver: function () {
+        this.setState({ hover: false });
+    },
+    render: function () {
+        return React.createElement(
+            'li',
+            null,
+            ' ',
+            React.createElement(
+                'a',
+                { style: this.props.lstyle, href: this.props.href },
+                this.props.title,
+                ' '
+            )
+        )
+        /*DON'T Make a separate div here. Hinders with BS logic. Also, use Radium for hover effect*/
+        ;
+    }
 });
 
 module.exports = NavItem;
@@ -20339,15 +20349,15 @@ var NavBar = React.createClass({
 
     render: function () {
         var createNavItem = function (item, index) {
-            return React.createElement(NavItem, { key: item.title + index, title: item.title, href: item.href });
+            return React.createElement(NavItem, { lstyle: linkStyle, key: item.title + index, title: item.title, href: item.href });
         };
         var navStyle = {};
-        var titleStyle = {};
+        var linkStyle = {};
         if (this.props.bgColor) {
             navStyle.background = this.props.bgColor;
         }
         if (this.props.linkColor) {
-            linkStyle.background = this.props.linkColor;
+            linkStyle.color = this.props.linkColor;
         }
         return React.createElement(
             'div',
@@ -20403,6 +20413,6 @@ var navLinks = [{
     href: "#"
 }];
 
-ReactDom.render(React.createElement(NavBar, { bgColor: "lavender", linkColor: "blue", navData: navLinks }), document.getElementById('content'));
+ReactDom.render(React.createElement(NavBar, { bgColor: "white", linkColor: "darkturquoise", navData: navLinks }), document.getElementById('content'));
 
 },{"./components/nav/navbar.jsx":171,"react":168,"react-dom":1}]},{},[172]);

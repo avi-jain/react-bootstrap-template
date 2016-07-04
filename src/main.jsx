@@ -18,4 +18,4 @@ var  navLinks = [
     
 ];
 
-ReactDom.render(<NavBar bgColor = "lavender" linkColor= "blue" navData={navLinks} />,document.getElementById('content'));
+ReactDom.render(<NavBar bgColor = "white" linkColor= "darkturquoise" navData={navLinks} />,document.getElementById('content'));
