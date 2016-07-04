@@ -1,0 +1,1 @@
+Bootstrap based template for a web page built with React.
