@@ -1,6 +1,9 @@
 var React = require('react');
 var NavItem = require('./navbar-item.jsx');
 
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
+
 var NavBar = React.createClass({
    
   
@@ -30,7 +33,7 @@ var NavBar = React.createClass({
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                       </button>
-                      <a className="navbar-brand" href = "#">Brand Name</a>
+                      <Link className="navbar-brand" to = "/">Brand Name</Link>
                      </div>
                      {/*Put the links that can be collapsed*/}
                      <div className = "collapse navbar-collapse" id = "nav-collapse">

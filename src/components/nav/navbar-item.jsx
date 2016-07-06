@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 var NavItem = React.createClass({
     getInitialState : function(){
@@ -12,7 +14,7 @@ var NavItem = React.createClass({
     },
     render : function(){
        return(
-               <li> <a style={this.props.lstyle} href = {this.props.href}>{this.props.title} </a></li> 
+               <li> <Link style={this.props.lstyle} to = {this.props.href}>{this.props.title} </Link></li> 
                 /*DON'T Make a separate div here. Hinders with BS logic. Also, use Radium for hover effect*/
        );
    } 
