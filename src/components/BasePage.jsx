@@ -1,16 +1,17 @@
 var React = require('react');
 var NavBar = require('./nav/navbar.jsx');
+
 var  navLinks = [
     {
-        title : "Link1",
+        title : "Home",
+        href : "/"
+    },
+    {
+        title : "About",
         href : "#"
     },
     {
-        title : "Link2",
-        href : "#"
-    },
-    {
-        title : "Link3",
+        title : "Stuff I do",
         href : "#"
     }
     
